@@ -28,7 +28,7 @@ const run = async () => {
   i = 0;
   while (true) {
     const { browser, page } = await connect({
-      headless: false,
+      headless: true,
       args: [],
       customConfig: {},
       turnstile: true,
