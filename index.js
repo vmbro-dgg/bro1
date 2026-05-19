@@ -25,10 +25,10 @@ const setInput = async (page, selector, value) => {
 };
 
 const run = async () => {
-  i = 0;
-  while (i < 2) {
+  // i = 0;
+  // while (i < 2) {
     const { browser, page } = await connect({
-      headless: true,
+      headless: false,
       args: [],
       customConfig: {},
       turnstile: true,
@@ -102,7 +102,7 @@ const run = async () => {
       // await browser.close();
       await browser.close();
     }
-  }
+  // }
 };
 
 run();
