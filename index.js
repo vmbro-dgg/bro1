@@ -25,14 +25,21 @@ const setInput = async (page, selector, value) => {
 };
 
 const run = async () => {
-  i = 0;
+  let i = 0;
   while (true) {
     const { browser, page } = await connect({
       headless: false,
-      args: [],
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-features=site-per-process",
+      ],
       customConfig: {},
       turnstile: true,
-      connectOption: {},
+      connectOption: {
+        protocolTimeout: 180000,
+      },
       disableXvfb: false,
       ignoreAllFlags: false,
       // proxy:{
@@ -43,7 +50,7 @@ const run = async () => {
       // }
     });
     try {
-      await page.goto(url_email, { waitUntil: "domcontentloaded", timeout: 120000, });
+      await page.goto(url_email, { waitUntil: "domcontentloaded", });
       await page.waitForSelector('div[x-text="selectedEmail.address"]');
       const email = await page.$eval(
         'div[x-text="selectedEmail.address"]',
