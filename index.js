@@ -89,7 +89,8 @@ const run = async () => {
       await new Promise((r) => setTimeout(r, 10000));
             // await page.screenshot({ path: `screen.png`, fullPage: true });
 
-      await pageTab.screenshot({ path: `screen_${i + 1}.png`, fullPage: true });
+      // await pageTab.screenshot({ path: `screen_${i + 1}.png`, fullPage: true });
+      await pageTab.screenshot({ path: `screen.png`, fullPage: true });
       // i++;
       // console.log(`Email com sucesso: ${email} - ${i}/${num_browsers}`);
       // if (i >= num_browsers) {
