@@ -26,7 +26,7 @@ const setInput = async (page, selector, value) => {
 
 const run = async () => {
   i = 0;
-  while (true) {
+  while (i < 2) {
     const { browser, page } = await connect({
       headless: true,
       args: [],
@@ -44,11 +44,11 @@ const run = async () => {
     });
     try {
       await page.goto(url_email, { waitUntil: "domcontentloaded" });
-      await page.waitForSelector('div[x-text="selectedEmail.address"]');
-      const email = await page.$eval(
-        'div[x-text="selectedEmail.address"]',
-        (el) => el.textContent.trim(),
-      );
+      // await page.waitForSelector('div[x-text="selectedEmail.address"]');
+      // const email = await page.$eval(
+      //   'div[x-text="selectedEmail.address"]',
+      //   (el) => el.textContent.trim(),
+      // );
       // const pageTab = await browser.newPage();
       // await pageTab.goto(`${url_browser}/auth/register`, {
       //   waitUntil: "domcontentloaded",
