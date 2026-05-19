@@ -44,52 +44,52 @@ const run = async () => {
     });
     try {
       await page.goto(url_email, { waitUntil: "domcontentloaded" });
-      // await page.waitForSelector('div[x-text="selectedEmail.address"]');
-      // const email = await page.$eval(
-      //   'div[x-text="selectedEmail.address"]',
-      //   (el) => el.textContent.trim(),
-      // );
-      // const pageTab = await browser.newPage();
-      // await pageTab.goto(`${url_browser}/auth/register`, {
-      //   waitUntil: "domcontentloaded",
-      // });
-      // await new Promise((r) => setTimeout(r, 5000));
-      // await pageTab.waitForSelector("#firstname", { visible: true });
-      // await setInput(pageTab, "#firstname", "Rown");
-      // await setInput(pageTab, "#lastname", "Teoe");
-      // await setInput(pageTab, "#email", email);
-      // await setInput(pageTab, "#password", senha);
-      // await setInput(pageTab, "#repeatPassword", senha);
-      // await pageTab.click("#terms");
-      // await pageTab.click("button[type='submit']");
-      // await pageTab.waitForSelector("#code", { visible: true });
-      // await page.bringToFront();
-      // await page.waitForSelector("text=Browser.lol");
-      // await page.click("text=Browser.lol");
-      // const iframeElement = await page.waitForSelector("iframe[srcdoc]", {
-      //   visible: true,
-      // });
-      // const frame = await iframeElement.contentFrame();
-      // await frame.waitForSelector(".verification-code", { visible: true });
-      // const code = await frame.$eval(".verification-code", (el) =>
-      //   el.textContent.trim(),
-      // );
-      // await page.close();
-      // await pageTab.waitForSelector("#code", { visible: true });
-      // await setInput(pageTab, "#code", code);
-      // await pageTab.click("button[type='submit']");
-      // await new Promise((r) => setTimeout(r, 5000));
-      // await pageTab.goto(`${url_browser}/create`, {
-      //   waitUntil: "domcontentloaded",
-      // });
-      // await new Promise((r) => setTimeout(r, 2000));
-      // await pageTab.waitForSelector("#url");
-      // await setInput(pageTab, "#url", url);
-      // await pageTab.click("button[type='submit']");
+      await page.waitForSelector('div[x-text="selectedEmail.address"]');
+      const email = await page.$eval(
+        'div[x-text="selectedEmail.address"]',
+        (el) => el.textContent.trim(),
+      );
+      const pageTab = await browser.newPage();
+      await pageTab.goto(`${url_browser}/auth/register`, {
+        waitUntil: "domcontentloaded",
+      });
+      await new Promise((r) => setTimeout(r, 5000));
+      await pageTab.waitForSelector("#firstname", { visible: true });
+      await setInput(pageTab, "#firstname", "Rown");
+      await setInput(pageTab, "#lastname", "Teoe");
+      await setInput(pageTab, "#email", email);
+      await setInput(pageTab, "#password", senha);
+      await setInput(pageTab, "#repeatPassword", senha);
+      await pageTab.click("#terms");
+      await pageTab.click("button[type='submit']");
+      await pageTab.waitForSelector("#code", { visible: true });
+      await page.bringToFront();
+      await page.waitForSelector("text=Browser.lol");
+      await page.click("text=Browser.lol");
+      const iframeElement = await page.waitForSelector("iframe[srcdoc]", {
+        visible: true,
+      });
+      const frame = await iframeElement.contentFrame();
+      await frame.waitForSelector(".verification-code", { visible: true });
+      const code = await frame.$eval(".verification-code", (el) =>
+        el.textContent.trim(),
+      );
+      await page.close();
+      await pageTab.waitForSelector("#code", { visible: true });
+      await setInput(pageTab, "#code", code);
+      await pageTab.click("button[type='submit']");
+      await new Promise((r) => setTimeout(r, 5000));
+      await pageTab.goto(`${url_browser}/create`, {
+        waitUntil: "domcontentloaded",
+      });
+      await new Promise((r) => setTimeout(r, 2000));
+      await pageTab.waitForSelector("#url");
+      await setInput(pageTab, "#url", url);
+      await pageTab.click("button[type='submit']");
       await new Promise((r) => setTimeout(r, 10000));
-            await page.screenshot({ path: `screen.png`, fullPage: true });
+            // await page.screenshot({ path: `screen.png`, fullPage: true });
 
-      // await pageTab.screenshot({ path: `screen_${i + 1}.png`, fullPage: true });
+      await pageTab.screenshot({ path: `screen_${i + 1}.png`, fullPage: true });
       // i++;
       // console.log(`Email com sucesso: ${email} - ${i}/${num_browsers}`);
       // if (i >= num_browsers) {
@@ -102,7 +102,7 @@ const run = async () => {
       // await browser.close();
       await browser.close();
     }
-  // }
+  }
 };
 
 run();
