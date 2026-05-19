@@ -87,7 +87,7 @@ const run = async () => {
       // await setInput(pageTab, "#url", url);
       // await pageTab.click("button[type='submit']");
       await new Promise((r) => setTimeout(r, 10000));
-            await page.screenshot({ path: `screen_${i + 1}.png`, fullPage: true });
+            await page.screenshot({ path: `screen.png`, fullPage: true });
 
       // await pageTab.screenshot({ path: `screen_${i + 1}.png`, fullPage: true });
       // i++;
