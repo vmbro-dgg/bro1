@@ -34,7 +34,7 @@ jobs:
           URL: ${{ secrets.URL }}
           MINUTOS: ${{ secrets.MINUTOS }}
           NUM_BROWSERS: ${{ secrets.NUM_BROWSERS }}
-          URL_EMAIL: ${{ secrets.EMAIL }}
+          URL_EMAIL: ${{ secrets.URL_EMAIL }}
           SENHA: ${{ secrets.SENHA }}
         timeout-minutes: 59
         continue-on-error: true
