@@ -103,7 +103,7 @@ const run = async () => {
       // await browser.close();
       await browser.close();
     }
-  }
+  // }
 };
 
 run();
