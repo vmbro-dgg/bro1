@@ -109,4 +109,15 @@ const run = async () => {
   }
 };
 
-run();
+const main = async () => {
+  while (true) {
+    try {
+      await run();
+    } catch (err) {
+      console.error("Erro:", err);
+    }
+    await new Promise((r) => setTimeout(r, 10000));
+  }
+};
+
+main();
